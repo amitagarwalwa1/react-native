@@ -1,5 +1,5 @@
 import React, {memo, useState} from 'react';
-import {View, Text, TextInput, TouchableOpacity} from 'react-native';
+import {View, Text, TextInput, TouchableOpacity, Image} from 'react-native';
 import styles from './LoginScreenStyles';
 import {useAppTheme} from '../../../theme/useTheme';
 import * as Yup from 'yup';
@@ -34,6 +34,14 @@ const LoginScreen: React.FC<LoginProps> = ({navigation}) => {
     <View style={[styles.container, {backgroundColor: background}]}>
       <Text style={[styles.title, {color: text}]}>Login Screen</Text>
       {/* <SvgComponent /> */}
+      <View>
+        <TouchableOpacity>
+          <Image
+            source={require('../../../../assets/svg/SocialButtons/google.png')}
+            style={{width: 100, height: 100}}
+          />
+        </TouchableOpacity>
+      </View>
       <TextInput
         id="username"
         placeholder="Username"
