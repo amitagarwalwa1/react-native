@@ -36,10 +36,10 @@ const LoginScreen: React.FC<LoginProps> = ({navigation}) => {
       {/* <SvgComponent /> */}
       <View>
         <TouchableOpacity>
-          <Image
+          {/* <Image
             source={require('../../../../assets/svg/SocialButtons/google.png')}
             style={{width: 100, height: 100}}
-          />
+          /> */}
         </TouchableOpacity>
       </View>
       <TextInput
@@ -69,8 +69,12 @@ const LoginScreen: React.FC<LoginProps> = ({navigation}) => {
       )}
       <TouchableOpacity
         activeOpacity={0.8}
-        // onPress={() => navigation.navigate('Home')}
-        onPress={loginFormik.handleSubmit}>
+        onPress={() => {
+          loginFormik.handleSubmit();
+          if (loginFormik.isValid) {
+            navigation.navigate('Feeds');
+          }
+        }}>
         <Text style={[styles.button]}>Login</Text>
       </TouchableOpacity>
     </View>

@@ -16,7 +16,7 @@ function App() {
   return (
     <SafeAreaView style={styles.container}>
       <NavigationContainer theme={theme}>
-        <Stack.Navigator initialRouteName="Feeds">
+        <Stack.Navigator initialRouteName="Login">
           <Stack.Screen
             name="Login"
             component={LoginScreen}
