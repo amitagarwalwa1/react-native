@@ -1,4 +1,3 @@
-// theme.js
 export const LightTheme = {
   dark: false,
   colors: {
@@ -7,6 +6,7 @@ export const LightTheme = {
     card: '#ffffff',
     text: '#000000',
     border: '#cccccc',
+    notification: '#ff0',
   },
 };
 
@@ -18,5 +18,6 @@ export const DarkTheme = {
     card: '#333333',
     text: '#ffffff',
     border: '#666666',
+    notification: '#ff0',
   },
 };
