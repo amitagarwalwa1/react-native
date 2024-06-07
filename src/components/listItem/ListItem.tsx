@@ -12,7 +12,7 @@ const CharacterListItem = ({character}: CharacterListItem) => {
   return (
     <View style={styles.container}>
       <Text style={styles.name}>{character.name}</Text>
-      <FastImage
+      {/* <FastImage
         style={styles.image}
         source={{
           uri: character.image,
@@ -20,8 +20,8 @@ const CharacterListItem = ({character}: CharacterListItem) => {
           priority: FastImage.priority.normal,
         }}
         resizeMode={FastImage.resizeMode.contain}
-      />
-      {/* <Image source={{uri: character.image}} style={styles.image} /> */}
+      /> */}
+      <Image source={{uri: character.image}} style={styles.image} />
     </View>
   );
 };

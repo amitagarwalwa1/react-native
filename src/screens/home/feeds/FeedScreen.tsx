@@ -29,17 +29,18 @@ const FeedScreen = () => {
     }
   };
 
+  useEffect(() => {
+    fetchPage(initialPage);
+  }, []);
+
   const onRefresh = () => {
-    if (loading) {
+    if (isLoading) {
       return;
     }
     setItems([]);
     // setNextPage(initialPage);
     fetchPage(initialPage);
   };
-  useEffect(() => {
-    fetchPage(initialPage);
-  }, []);
 
   const itemHeight = width + 40;
 
@@ -69,15 +70,17 @@ const FeedScreen = () => {
       data={items}
       ListFooterComponent={() => isLoading && <ActivityIndicator />}
       renderItem={renderItem}
+      keyExtractor={item => item.id.toString()}
       refreshing={isLoading}
+      onRefresh={onRefresh}
       onEndReached={() => fetchPage(nextPage)}
       onEndReachedThreshold={5}
-      debug
+      //   debug
       contentContainerStyle={{gap: 10}}
       columnWrapperStyle={{gap: 5}}
       numColumns={2}
-      removeClippedSubviews={true}
-      initialNumToRender={3}
+      //   removeClippedSubviews={true}
+      initialNumToRender={5}
       viewabilityConfigCallbackPairs={viewabilityConfigCallbackPairs.current}
       getItemLayout={(data, index) => ({
         length: itemHeight,
