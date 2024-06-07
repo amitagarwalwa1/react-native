@@ -42,7 +42,7 @@ const FeedScreen = () => {
     fetchPage(initialPage);
   };
 
-  const itemHeight = width + 40;
+  const itemHeight = width + 20;
 
   // Use case: increase impression count for posts
   // that are visible on the screen for more than 0.5 seconds
@@ -79,12 +79,12 @@ const FeedScreen = () => {
       contentContainerStyle={{gap: 10}}
       columnWrapperStyle={{gap: 5}}
       numColumns={2}
-      //   removeClippedSubviews={true}
+      removeClippedSubviews={true}
       initialNumToRender={5}
       viewabilityConfigCallbackPairs={viewabilityConfigCallbackPairs.current}
       getItemLayout={(data, index) => ({
         length: itemHeight,
-        offset: (itemHeight + 5) * index,
+        offset: (itemHeight + 1) * index,
         index,
       })}
     />
